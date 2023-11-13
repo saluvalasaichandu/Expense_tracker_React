@@ -95,42 +95,40 @@ const emailHandler = (e) => {
 
 
   return (
-    <div>
-         <div>{login ? <h1>Signup</h1> : <h1>Login</h1>}</div>
-         <form onSubmit={submitHandler}>
-            <div>
-                <label>Email id</label>
+    <div className='bg-gray-100 w-1/6'>
+         <div className='font-serif text-3xl'>{login ? <h1>Signup</h1> : <h1>Login</h1>}</div>
+         <form onSubmit={submitHandler} >
+            <div className='font-serif text-base'>
+                <label>Email id: </label>
                 <input type='email' placeholder='email' value={details.email}
               onChange={emailHandler} required></input>
             </div>
 
             {!login ?<div>
-            <label>Password</label>
+            <label>Password: </label>
                 <input type='password' placeholder='password' value={details.password}
               onChange={passwordHandler} required></input>
             </div>:
-            <div>
+            <div className='font-serif text-base'>
                 <label>Password</label>
                 <input  value={details.password}
-              onChange={passwordHandler} required></input>
+              onChange={passwordHandler} placeholder='password'required></input>
             </div>
             }
 
             {login && (
             <div >
               <label>Confirm Password</label>
-              <input type="password" value={details.confirmPassword} onChange={confirmHandler}required></input>
+              <input type="password" value={details.confirmPassword} onChange={confirmHandler}required placeholder='confirmPassword'></input>
             </div>
           )}
 
-            <div>
-                <button> Submit </button>
-
-                
+            <div className='font-serif text-2xl'>
+                <button> Submit </button>  
             </div>
          </form>
 
-         <div>
+         <div className=' font-serif text-lg'>
          {login && (<button onClick={(e) => {e.preventDefault();setLogin(false); }}>
             already have an account then. Login
           </button>

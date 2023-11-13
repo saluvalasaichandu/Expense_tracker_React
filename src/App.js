@@ -1,9 +1,9 @@
 
-import './App.css';
+
 import Login from './components/Login';
 function App() {
   return (
-    <div className="App">
+    <div className="py-4 mx-4">
       <Login></Login>
     </div>
   );
