@@ -36,8 +36,9 @@ const submitHandler=(e)=>{
               }
             })
         .then((data)=>{
-            console.log(data.idToken);
-            alert("login Successful")
+          localStorage.setItem('login',data.idToken)
+          console.log(data.idToken);
+          alert("login Successful")
         })
         .catch((err) => {
             alert("Authentication failed");
